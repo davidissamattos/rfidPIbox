@@ -1,0 +1,32 @@
+{
+  "name": "rfidpibox",
+  "version": "1.0.0",
+  "description": "A raspberry pi music player controlled by RFID cards",
+  "main": "./build/index.js",
+  "scripts": {
+    "run-dev": "MUSIC_FOLDER= './music/' node ./build/index.js",
+    "run": "MUSIC_FOLDER= 'pi/music/' node ./build/index.js",
+    "build": "tsc -p .",
+    "clean": "rm -rf ./build/",
+    "clean-build": "npm-run-all clean build",
+    "dev": "npm-run-all -s clean-build run-dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "David Issa Mattos",
+  "license": "MIT",
+  "dependencies": {
+    "find-exec": "^1.0.1",
+    "mplayer": "^2.1.0",
+    "nfc-pcsc": "^0.8.1",
+    "node-mp3-player": "^1.0.3",
+    "play-sound": "^1.1.3"
+  },
+  "devDependencies": {
+    "@types/find-exec": "^1.0.0",
+    "@types/node": "^15.12.2",
+    "@types/play-sound": "^1.1.0",
+    "npm-run-all": "^4.1.5",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.3.2"
+  }
+}
